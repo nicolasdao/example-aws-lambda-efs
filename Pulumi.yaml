@@ -1,0 +1,3 @@
+name: aws-lambda-efs
+runtime: nodejs
+description: Proof of concept an AWS lambda that can use Git to version-control files on AWS EFS.

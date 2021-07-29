@@ -1,0 +1,32 @@
+{
+  "name": "aws-lambda-efs",
+  "version": "0.0.1",
+  "description": "Proof of concept an AWS lambda that can use Git to version-control files on AWS EFS using Pulumi.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicolasdao/template-emptyjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nicolasdao/template-emptyjs/issues"
+  },
+  "homepage": "https://github.com/nicolasdao/template-emptyjs#readme",
+  "scripts": {
+    "deploy": "pulumi up -s dev -y",
+    "lint": "eslint index.js app/ --fix",
+    "push": "git push --follow-tags origin master",
+    "rls": "standard-version --release-as",
+    "v": "node -e \"console.log(require('./package.json').version)\""
+  },
+  "author": "Nicolas Dao",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "standard-version": "^9.3.0"
+  },
+  "dependencies": {
+    "@pulumi/aws": "^4.13.0",
+    "@pulumi/awsx": "^0.30.0",
+    "@pulumi/pulumi": "^3.7.1"
+  }
+}
