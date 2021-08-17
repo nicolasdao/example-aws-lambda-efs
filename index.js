@@ -87,6 +87,11 @@ const main = async () => {
 		role: lambdaRole.name,
 		policyArn: cloudWatchPolicy.arn
 	})
+	
+	// As described in the doc, the execution role for the lambda function must provide access 
+	// to the VPC and EFS. The following AWS managed policies do just that, but might be too much
+	// for production. To restrict access further, please refer to this document: 
+	// https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html
 	const lambdaVpcAccess = new aws.iam.RolePolicyAttachment(`${PROJECT}-vpc-access`, {
 		role: lambdaRole.name,
 		policyArn: aws.iam.ManagedPolicy.AWSLambdaVPCAccessExecutionRole
